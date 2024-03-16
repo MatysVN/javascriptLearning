@@ -1,0 +1,27 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+    margin: 2em;
+	font-family: "Roboto", sans-serif;
+	font-size: 1.6rem;
+    color: #fff;
+	background-color: #1d1b21;
+}
+hr {
+    display: block;
+    height: 2px;
+    background-color: rgb(123, 196, 13);
+    width: 10%;
+}
