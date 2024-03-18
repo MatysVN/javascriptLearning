@@ -1,20 +1,28 @@
-const name = 'Mateusz';
+const name = "Mateusz";
+const hobby = "motorcycles";
+const age = 29;
 
-console.log(name);
+console.log(
+	"Hello, my name is " +
+		name +
+		"." +
+		" I have " +
+		age +
+		" years old, and my hobby is " +
+		hobby +
+		"."
+);
+//KONKATENACJA czyli łączenie ze sobą stringów
+//jest to stary zapis z którego raczej się nie korzysta lepiej użyć template strings
 
-let age = 29
-console.log(age);
+console.log(
+	`Hello, my name is ${name}. I have ${age} years old, and my hobby is ${hobby}.`
+);
 
-age = 'jakiś tekst, niekoniecznie wiek'
-console.log(age);
+const petName = "Mała Mi";
 
-let color;
+console.log(`Cześć, jestem ${name}, a to jest ${petName} - mój kot.`);
 
-color = 'red'
-console.log(color);
-
-let myName = 'Mateusz'
-let myAge = 30
-let favoriteFood = 'kebab'
-
-console.log(myName, myAge, favoriteFood); 
+const petAge = 2;
+console.log(petName + " ma już " + petAge + " lata!");
+console.log(`${petName} ma już ${petAge} lata!`);
