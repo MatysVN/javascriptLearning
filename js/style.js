@@ -17,4 +17,4 @@ let myName = 'Mateusz'
 let myAge = 30
 let favoriteFood = 'kebab'
 
-console.log(myName, myAge, favoriteFood);
+console.log(myName, myAge, favoriteFood); 
