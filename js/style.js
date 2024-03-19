@@ -1,30 +1,26 @@
-const text = "123";
+const text1 = "powiększ mnie";
+const text2 = "ZAPISZ MNIE MAŁYMI LITERAMI";
+const text3 = "$#%#^ wytnij te dziwne znaki na początku!";
+const text4 = 'sprawdź, czy zawieram słowo "czy"';
+const text5 =
+	'wyLoguj w konsoli tylko literę "L", która znajduje się w wyrazie "Wyloguj"';
+const text6 = "pies zamień każde słowo pies, na słowo kot pies";
+const text7 = "podziel, ten, string, od, przecinków";
 
-//za pomocą typeof sprawdzamy jaki mamy typ danych
-console.log(typeof text);
+console.log(text1.toUpperCase());
+console.log(text2.toLowerCase());
+//Zaznacz 6 znak i powiększ go + wytnij znaki 0-6
+console.log(text3.charAt(6).toUpperCase() + text3.slice(7));
+//lub po prostu
+console.log(text3.slice(6));
 
-//żeby zacytować coś musimy użyć różnych nawiasów do określenia treści
-const quote = 'Mateusz powiedział - "Kocham kebaby"';
-console.log(quote);
+const ifContains = "czy";
+console.log(`Słowo "${ifContains}" ${text4.includes(ifContains) ? "jest" : "nie ma"} w stringu text4`);
+//lub po prostu true/false
+console.log(text4.includes('czy'));
 
-//Metody w JS
-//.lenght sprawdza ilość znaków w stringu
-console.log(quote.length);
+console.log(text5.charAt(2));
 
-//.toUpperCase zmienia znaki na wielkie litery
-console.log(quote.toUpperCase());
+console.log(text6.replace('pies', 'kot'));
 
-//.toLowerCase zmienia znaki na małe litery, możemy też zdefiniować nową funcję za pomocą już istniejącej
-const newMsg = quote.toUpperCase();
-console.log(newMsg.toLowerCase());
-
-//za pomocą .Locale.... możemy ustawić wartość dla konkretnej lokalizacji gdzie inaczej zapisujemy np datę
-const date = new Date();
-console.log(date);
-console.log(date.toLocaleDateString("pl"));
-console.log(date.toLocaleDateString("en"));
-
-//Metody możemy łączyć z sobą
-const username = "maciej";
-const newUserName = username.charAt(0).toUpperCase()+username.slice(1)
-console.log(newUserName);
+console.log(text7.split(','));
