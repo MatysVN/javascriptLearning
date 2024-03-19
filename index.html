@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,13 +16,34 @@
 
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <H1>WPROWADZENIE DO JAVASCRIPT</H1>
     <hr>
-    <h2>TEMPLATE STRINGS</h2>
+    <h2>TYPY DANYCH - STRING</h2>
     <br>
-   
+    <h3>Metody czy funkcje w javascript musimy zawsze wywołać - robimy to za pomocą ( ) <br> np. console.log(
+        name.toUpperCase <span>( )</span> )</h3>
+    <br>
+    <h3>
+        Możemy zdefiniować nową funcję za pomocą już istniejącej np.
+        <span> const newMsg = quote.toUpperCase();</span>
+    </h3>
+    <br>
+    <h3>
+        za pomocą .Locale... możemy ustawić wartość dla konkretnej lokalizacji gdzie inaczej zapisujemy np datę:
+        <span> console.log(date.toLocaleDateString ("en") );</span>
+    </h3>
+    <br>
+    <h3>
+        Metody możemy łączyć z sobą np:<br>
+       const username = "maciej"; <br>
+       <span>const newUserName = username.charAt(0).toUpperCase()+username.slice(1);</span> <br>
+            console.log(newUserName);
+    </h3>
 
-<script src="./js/style.js"></script>
+
+    <script src="./js/style.js"></script>
 </body>
+
 </html>

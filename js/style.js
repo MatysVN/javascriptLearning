@@ -1,28 +1,30 @@
-const name = "Mateusz";
-const hobby = "motorcycles";
-const age = 29;
+const text = "123";
 
-console.log(
-	"Hello, my name is " +
-		name +
-		"." +
-		" I have " +
-		age +
-		" years old, and my hobby is " +
-		hobby +
-		"."
-);
-//KONKATENACJA czyli łączenie ze sobą stringów
-//jest to stary zapis z którego raczej się nie korzysta lepiej użyć template strings
+//za pomocą typeof sprawdzamy jaki mamy typ danych
+console.log(typeof text);
 
-console.log(
-	`Hello, my name is ${name}. I have ${age} years old, and my hobby is ${hobby}.`
-);
+//żeby zacytować coś musimy użyć różnych nawiasów do określenia treści
+const quote = 'Mateusz powiedział - "Kocham kebaby"';
+console.log(quote);
 
-const petName = "Mała Mi";
+//Metody w JS
+//.lenght sprawdza ilość znaków w stringu
+console.log(quote.length);
 
-console.log(`Cześć, jestem ${name}, a to jest ${petName} - mój kot.`);
+//.toUpperCase zmienia znaki na wielkie litery
+console.log(quote.toUpperCase());
 
-const petAge = 2;
-console.log(petName + " ma już " + petAge + " lata!");
-console.log(`${petName} ma już ${petAge} lata!`);
+//.toLowerCase zmienia znaki na małe litery, możemy też zdefiniować nową funcję za pomocą już istniejącej
+const newMsg = quote.toUpperCase();
+console.log(newMsg.toLowerCase());
+
+//za pomocą .Locale.... możemy ustawić wartość dla konkretnej lokalizacji gdzie inaczej zapisujemy np datę
+const date = new Date();
+console.log(date);
+console.log(date.toLocaleDateString("pl"));
+console.log(date.toLocaleDateString("en"));
+
+//Metody możemy łączyć z sobą
+const username = "maciej";
+const newUserName = username.charAt(0).toUpperCase()+username.slice(1)
+console.log(newUserName);
