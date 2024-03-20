@@ -1,20 +1,37 @@
-// == porównuje zawartość (wynik TRUE)
-console.log(10 == '10');
 
-// === porównuje zawartość oraz typ danych (wynik FALSE)
-console.log(10 === '10');
+// OPERATOR && - i 
+//jeżeli (będę miał pieniądze && będę miał pustą lodówkę) { to pójdę na zakupy} else { zostanę w domu }
+if (true && true) {
+	console.log("%c👌", "font-size: 30px;");
+} else {
+	console.log("%c👎", "font-size: 30px;");
+}
+if (true && false) {
+	console.log("%c👌", "font-size: 30px;");
+} else {
+	console.log("%c👎", "font-size: 30px;");}
 
-// negacja - sprawdza czy zawartość 10 typu number jest różna od '10' string (wynik FALSE - zawartość w obu przypadkach wynosi 10)
-console.log(10 != '10');
+// OPERATOR || - lub
+//jeżeli (będę miał pieniądze || ktoś mi je pożyczy) { to pójdę na zakupy} else { zostanę w domu }
+if (true || true) {
+	console.log("%c👄", "font-size: 30px;");
+} else {
+	console.log("%c🖕", "font-size: 30px;");
+}
+if (false || true) {
+	console.log("%c👄", "font-size: 30px;");
+} else {
+	console.log("%c🖕", "font-size: 30px;");
+}
+if (false || false) {
+	console.log("%c👄", "font-size: 30px;");
+} else {
+	console.log("%c🖕", "font-size: 30px;");
+}
 
-// negacja - sprawdza czy zawartość I TYP DANYCH 10 typu number jest różna od '10' string (wynik TRUE - zawartość w obu przypadkach wynosi 10, ale typ danych jest różny)
-console.log(10 !== '10');
-
-//negację możemy także stosować do innych funkcji
-console.log(!true); // da nam wynik false
-console.log(!false); // da nam wynik true
-
-console.log(10 > 5); // sprawdzamy czy 10 jest większe od 5
-console.log(10 < 5); // sprawdzamy czy 10 jest mniejsze od 5
-console.log(10 >= 5); // sprawdzamy czy 10 jest większe lub równe 5
-console.log(10 <= 5); // sprawdzamy czy 10 jest mniejsze lub równe 5
+//OPERATOR ! zaprzeczenie // w tym przykładzie da wynik FALSE
+if (!(true && true)) {
+	console.log("%c👌", "font-size: 30px;");
+} else {
+	console.log("%c👎", "font-size: 30px;");
+}
