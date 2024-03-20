@@ -1,31 +1,20 @@
-let x = 5;
-const y = 8;
+// == porównuje zawartość (wynik TRUE)
+console.log(10 == '10');
 
-const add = x + y;
-console.log(add);
+// === porównuje zawartość oraz typ danych (wynik FALSE)
+console.log(10 === '10');
 
-const substract = x - y;
-console.log(substract);
+// negacja - sprawdza czy zawartość 10 typu number jest różna od '10' string (wynik FALSE - zawartość w obu przypadkach wynosi 10)
+console.log(10 != '10');
 
-const multiply = x * y;
-console.log(multiply);
+// negacja - sprawdza czy zawartość I TYP DANYCH 10 typu number jest różna od '10' string (wynik TRUE - zawartość w obu przypadkach wynosi 10, ale typ danych jest różny)
+console.log(10 !== '10');
 
-const divide = x / y;
-console.log(divide);
+//negację możemy także stosować do innych funkcji
+console.log(!true); // da nam wynik false
+console.log(!false); // da nam wynik true
 
-// % ++ --
-
-x++; //+1 = 6
-x++; //+1 = 7
-x++; //+1 = 8
-
-console.log(`Inkrementacja: ${x}`);
-
-x--; //-1 = 7
-x--; //-1 = 6
-
-console.log(`Dekrementacja: ${x}`);
-
-// modulo jest to reszta z dzielenia, dzięki temu możemy sprawdzić czy pracujemy z liczbą parzystą czy nieparzystą
-const modulo = 11 % 2
-console.log(`Reszta z dzielenia: ${modulo}`);
+console.log(10 > 5); // sprawdzamy czy 10 jest większe od 5
+console.log(10 < 5); // sprawdzamy czy 10 jest mniejsze od 5
+console.log(10 >= 5); // sprawdzamy czy 10 jest większe lub równe 5
+console.log(10 <= 5); // sprawdzamy czy 10 jest mniejsze lub równe 5
