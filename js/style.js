@@ -1,21 +1,31 @@
-//typ danych typu tablica
-const colors = ['red', 'green', 'blue'];
+let x = 5;
+const y = 8;
 
-console.log(colors);
+const add = x + y;
+console.log(add);
 
-//typ złożony funkcja
-function test() {
-    console.log('Cześć, jestem w funkcji :)');
-};
-//aby wywołać funkcję musimy ją wypisać
-test();
+const substract = x - y;
+console.log(substract);
 
-//typ złożony obiekt
-//przykład zakłada że użytkownik przy wypełnianiu formularza wypełnił name, age, ale nie wypełnił favColor
-const form = {
-    name: 'Klaudia',
-    age: 23,
-    favColor: null
-}
+const multiply = x * y;
+console.log(multiply);
 
-console.log(form);
+const divide = x / y;
+console.log(divide);
+
+// % ++ --
+
+x++; //+1 = 6
+x++; //+1 = 7
+x++; //+1 = 8
+
+console.log(`Inkrementacja: ${x}`);
+
+x--; //-1 = 7
+x--; //-1 = 6
+
+console.log(`Dekrementacja: ${x}`);
+
+// modulo jest to reszta z dzielenia, dzięki temu możemy sprawdzić czy pracujemy z liczbą parzystą czy nieparzystą
+const modulo = 11 % 2
+console.log(`Reszta z dzielenia: ${modulo}`);
