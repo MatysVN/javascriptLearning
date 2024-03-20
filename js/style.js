@@ -1,18 +1,21 @@
-/* 
-! TO ZAWSZE ZWRÓCI FALSE !
+//typ danych typu tablica
+const colors = ['red', 'green', 'blue'];
 
-false
-undefined
-null
-0
-Nan
-'' - pusty string
+console.log(colors);
 
-*/
+//typ złożony funkcja
+function test() {
+    console.log('Cześć, jestem w funkcji :)');
+};
+//aby wywołać funkcję musimy ją wypisać
+test();
 
-//Każda liczba różna od 0 czy string zwróci TRUE
-if (1) {
-    console.log('TRUE');
-} else {
-    console.log('FALSE');
+//typ złożony obiekt
+//przykład zakłada że użytkownik przy wypełnianiu formularza wypełnił name, age, ale nie wypełnił favColor
+const form = {
+    name: 'Klaudia',
+    age: 23,
+    favColor: null
 }
+
+console.log(form);
