@@ -1,37 +1,9 @@
+const password = '213ads21aa!'
 
-// OPERATOR && - i 
-//jeżeli (będę miał pieniądze && będę miał pustą lodówkę) { to pójdę na zakupy} else { zostanę w domu }
-if (true && true) {
-	console.log("%c👌", "font-size: 30px;");
+if(password.length > 10 && password.includes('!')) {
+	console.log(`Twoje hasło ma ${password.length} znaków. To jest rewelacyjne hasło!`);
+} else if(password.length > 5 && password.length <= 10) {
+	console.log(`Twoje hasło ma ${password.length} znaków. To jest średnie hasło.. Dodaj "!"`);
 } else {
-	console.log("%c👎", "font-size: 30px;");
-}
-if (true && false) {
-	console.log("%c👌", "font-size: 30px;");
-} else {
-	console.log("%c👎", "font-size: 30px;");}
-
-// OPERATOR || - lub
-//jeżeli (będę miał pieniądze || ktoś mi je pożyczy) { to pójdę na zakupy} else { zostanę w domu }
-if (true || true) {
-	console.log("%c👄", "font-size: 30px;");
-} else {
-	console.log("%c🖕", "font-size: 30px;");
-}
-if (false || true) {
-	console.log("%c👄", "font-size: 30px;");
-} else {
-	console.log("%c🖕", "font-size: 30px;");
-}
-if (false || false) {
-	console.log("%c👄", "font-size: 30px;");
-} else {
-	console.log("%c🖕", "font-size: 30px;");
-}
-
-//OPERATOR ! zaprzeczenie // w tym przykładzie da wynik FALSE
-if (!(true && true)) {
-	console.log("%c👌", "font-size: 30px;");
-} else {
-	console.log("%c👎", "font-size: 30px;");
+	console.log(`Twoje hasło ma tylko ${password.length} znaków. Musi być dłuższe...`);
 }
