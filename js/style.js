@@ -1,39 +1,24 @@
-const day = "środa";
+let x = 10
 
-//IF
-
-if (day === "poniedziałek") {
-	console.log("Dziś jest poniedziałek");
-} else if (day === "wtorek") {
-	console.log("Dziś jest wtorek");
-} else if (day === "środa") {
-	console.log("Dziś jest środa");
-} else if (day === "czwartek") {
-	console.log("Dziś jest czwartek");
-} else if (day === "piątek") {
-	console.log("Dziś jest piątek");
+if (x > 20) {
+	console.log(`${x} > 20`);
 } else {
-	console.log("Jest Weekend");
+	console.log(`${x} < 20`);
 }
 
-//SWITCH
+//zamiast tego można napisać 
+const newX = x > 20 ? `${x} > jest większe niż 20` : `${x} < jest mniejsze niż 20`;
+console.log(newX);
 
-switch (day) {
-	case "poniedziałek":
-		console.log("Dziś jest poniedziałek");
-		break;
-	case "wtorek":
-		console.log("Dziś jest wtorek");
-		break;
-	case "środa":
-		console.log("Dziś jest środa");
-		break;
-	case "czwartek":
-		console.log("Dziś jest czwartek");
-		break;
-	case "piątek":
-		console.log("Dziś jest piątek");
-		break;
-	default:
-		console.log("WEEKEND");
+//-----------
+
+const isLoggedIn = true; 
+
+function loggedIn() {
+	console.log('Użytkownik jest zalogowany!');
 }
+function loggedOut() {
+	console.log('Użytkownik nie jest zalogowany...');
+}
+
+isLoggedIn ? loggedIn() : loggedOut();
