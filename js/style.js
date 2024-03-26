@@ -1,24 +1,27 @@
-const numbers = [1, 2, 3, 4, 5];
-console.log(numbers);
+const numbers = [0, 0, 1, 1, 2, 2, 2]
+const colors = ['red', 'green', 'blue', true, 123]
+const cars = [123, true, 'audi', 'bmw', 'mercedes', 'ferrari', '🤷‍♂️', '👀']
 
-//unshift raczej rzadko uzywamy dlatego że targetując konkretne elementy zmieniają im się indeksy i możemy popsuć kod
-console.log("unshift");
-numbers.unshift(100, 200);
-console.log(numbers);
 
-//shift usuwa element z indeksem 0 przez co element z indeksem 1 ma 0, jeżeli chcemy usunąc więcej elementów musimy napisać kila shift
-console.log("shift");
-numbers.shift();
-console.log(numbers);
 
-//push dodaje element na końcu naszej tablicy, metoda często używana
-const colors = ["red", "green", "blue"];
+console.log('Slice');
+const numbers2 = numbers.slice(0,2)
+console.log(numbers2);
+//nie musimy podawać wszystkich elementów jeden też zadziała
+const numbers3 = numbers.slice(-3)
+console.log(numbers3);
 
-console.log("push");
-colors.push("gold", 10);
+
+
+console.log('------');
+console.log('Splice');
+const randomStuff = colors.splice(3,2)
 console.log(colors);
+console.log(randomStuff);
 
-//pop usuwa ostatni element tablicy, działa podobnie do shifta
-console.log("pop");
-colors.pop();
-console.log(colors);
+
+
+console.log('------');
+const newCars = cars.splice(2,4, 'test')
+console.log(cars);
+console.log(newCars);
