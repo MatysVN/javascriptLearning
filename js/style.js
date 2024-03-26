@@ -1,41 +1,24 @@
-console.log("Zadanie #1");
-const cities = ["Kraków", "Warszawa", "Gdańsk", "Wrocław"];
+const numbers = [1, 2, 3, 4, 5];
+console.log(numbers);
 
-for (let i = 0; i < cities.length; i++) {
-	console.log(`To miasto nazywa się: ${cities[i].toUpperCase()}`);
-}
-console.log("--------");
-console.log("Zadanie #2");
+//unshift raczej rzadko uzywamy dlatego że targetując konkretne elementy zmieniają im się indeksy i możemy popsuć kod
+console.log("unshift");
+numbers.unshift(100, 200);
+console.log(numbers);
 
-let x = 0;
-while (x < 10) {
-	x += 2;
-	console.log(x);
-}
+//shift usuwa element z indeksem 0 przez co element z indeksem 1 ma 0, jeżeli chcemy usunąc więcej elementów musimy napisać kila shift
+console.log("shift");
+numbers.shift();
+console.log(numbers);
 
-console.log("--------");
-console.log("Zadanie #3");
+//push dodaje element na końcu naszej tablicy, metoda często używana
+const colors = ["red", "green", "blue"];
 
-let a = 20;
-do {
-	a -= 3;
-} while (a > 0)
-console.log(a);
+console.log("push");
+colors.push("gold", 10);
+console.log(colors);
 
-console.log("--------");
-console.log("Zadanie #4");
-
-const numbers = [5, 8, 10, 23, 48, 60]
-for(const number of numbers) {
-	console.log(number /5);
-}
-
-console.log('----');
-
-for (const number of numbers) {
-	if (number % 2 === 0) {
-		console.log(`%cLiczba ${number} jest parzysta`, "background-color:gold; color:black;padding:3px");
-	} else {
-		console.log(`%cLiczba ${number} jest nieparzysta`, 'background-color: tomato; color:black; padding:3px');
-	}
-}
+//pop usuwa ostatni element tablicy, działa podobnie do shifta
+console.log("pop");
+colors.pop();
+console.log(colors);
