@@ -1,27 +1,25 @@
-const numbers = [0, 0, 1, 1, 2, 2, 2]
-const colors = ['red', 'green', 'blue', true, 123]
-const cars = [123, true, 'audi', 'bmw', 'mercedes', 'ferrari', '🤷‍♂️', '👀']
+const numbers = [0, 23, 48, 175, 2, 34, 11]
 
+function number(x) {
+    return x % 2 === 0
+}
 
+//filter(nazwafunkcji) wypisuje nam te elementy z tablicy które spełniają warunki funkcji, w tym przypadku konsola wypisze nam wszystkie liczby parzyste
+console.log('filter');
+console.log(numbers.filter(number));
 
-console.log('Slice');
-const numbers2 = numbers.slice(0,2)
-console.log(numbers2);
-//nie musimy podawać wszystkich elementów jeden też zadziała
-const numbers3 = numbers.slice(-3)
-console.log(numbers3);
+//na tablicy numbers dla każdego naszego elementu (num) wykonaj kod
+console.log('-----');
+console.log('forEach');
+numbers.forEach(num => console.log(num * 5))
 
+//sprawdzamy czy na tablicy numbers znajduje się typ number 0, jeśli byłby string '0' to pokaże false
+console.log('-----');
+console.log('include');
+console.log(numbers.includes(0));
 
-
-console.log('------');
-console.log('Splice');
-const randomStuff = colors.splice(3,2)
-console.log(colors);
-console.log(randomStuff);
-
-
-
-console.log('------');
-const newCars = cars.splice(2,4, 'test')
-console.log(cars);
-console.log(newCars);
+//sprawdzamy jaki index ma element w naszej tablicy, w tym przypadku przy wartości 175 znajdującej się w tablicy pokaże 3 ponieważ 175 ma index 3, przy 210 pokaże -1 ponieważ takiego elemntu nie ma w tablicy
+console.log('-----');
+console.log('indexOf');
+console.log(numbers.indexOf(175));
+console.log(numbers.indexOf(210));

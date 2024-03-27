@@ -20,11 +20,18 @@
 <body>
     <H1>TABLICE</H1>
     <hr>
-    <h2>METODY cz.3</h2>
+    <h2>METODY cz.4</h2>
     <br><br>
-    <h3><span>Slice()</span> <br> - metoda niedestrukcyjna <br><br>- pierwszy argument – indeks elementu, od którego wycinamy (włącznie) <br><br> - drugi argument – indeks elementu, do którego wycinamy (ale bez tego elementu)</h3> <br> <br>
-    <h3><span>Splice()</span> <br> - metoda destrukcyjna <br><br>- pierwszy argument – indeks elementu, od którego wycinamy (włącznie)<br><br> - drugi argument – ilość elementów, które wycinamy <br>
-    <br>- każdy kolejny argument – nowy element, który chcemy dodać do tablicy w miejsce wyciętego.</h3> <br> <p class="red">Uwaga! Zarówno przy slice jak i splice, nie musimy podawać wszystkich argumentów. Jeden też zadziała</p>
+
+    <h3><span>filter</span> <br> przyjmuje funkcje, w przyjętej funkcji wpisujemy logikę która ma zostać sprawdzona na elmencie w którym zastosujemy filter, a następnie możemy pracować z tą wartością<br> <br>
+
+    <h3><span>forEach</span> <br> bierze tablicę na którą nakładamy naszą metodę, a następnie na każdym elemencie tej tablicy jest wykonywana funkcja / kod<br><br>
+
+    <h3><span>include</span> <br> za pomocą include sprawdzamy czy mamy jakiś element w naszej tablicy, zwraca TRUE / FALSE<br><br>
+
+    <h3><span>indexOf</span> <br> jest to metoda która sprawdza nam index jakiegoś elementu. Używamy tego głównie kiedy chcemy sprawdzić czy nasza tablica <span class="pink">nie zawiera</span> jakiegoś elementu. Wtedy metoda zwróci nam index <span class="pink">-1</span><br><br>
+        
+        <p class="red">CALLBACK - funkcja, którą przekazujemy jako argument do innej funkcji</p>
 
 
     <script src="./js/style.js"></script>
