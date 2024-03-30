@@ -1,27 +1,41 @@
-const numbers = [0.5, 4, "abc"];
-const names = ['Balbina', 'Marysia', 'Matylda', 'Mateusz']
+let score;
 
-numbers.forEach(number => console.log(number * number))
+const add = (x, y) => {
+	score = x + y;
+	console.log(`Wynik dodawania to ${score}`);
 
-//konsola wyloguje nam undefined ponieważ pętla forEach niczego nam nie zwraca
-const bigNames = names.forEach(name => name.toUpperCase())
-console.log(bigNames);
+	// if (score % 2 === 0) {
+	// 	even();
+	// } else {
+	// 	odd();
+	// }
 
-//zamiast tego musimy użyć map który zwraca nam nową tablicę
-const realBigNames = names.map(name => name.toUpperCase())
-console.log(realBigNames);
+	//zamiast tak długiego if możemy zapisać funkcje warunkową:
+	score % 2 === 0 ? even() : odd();
+};
+
+const even = () => {
+	console.log(`Liczba ${score} jest parzysta.`);
+};
+const odd = () => {
+	console.log(`Liczba ${score} jest nieparzysta.`);
+};
+
+add(10,20)
 
 console.log('');
-console.log('===Callback===');
-//zamiast tego możemy w map dodać callbacka
+console.log('===Zadanie skrócone===');
+//Całe zadanie możemy zapisać dużo krócej
 
-//funkcja służąca  za callback
-const showBigNames = (name) => {
-	console.log(name.toUpperCase());
+let score2
+
+const add2 = (a,b) => {
+	score2 = a + b;
+	console.log(`Wynik dodawania to ${score2}`);
+
+	score2 % 2 === 0 ? fun1(score2) : fun2(score2)
 }
-const callbackBigNames = names.map(showBigNames)
+const fun1 = (el) => console.log(`Liczba ${el} jest parzysta`);
+const fun2 = (el) => console.log(`Liczba ${el} jest nieparzysta`);
 
-console.log('===Zapis skrócony===');
-
-//możemy to również zapisać bez callbacka w 1 linijce
-names.forEach(parametr => console.log(parametr.toUpperCase()))
+add2(6,3)
