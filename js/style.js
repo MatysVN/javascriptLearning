@@ -1,12 +1,14 @@
-console.log(`=== KONWENTER °C na °F ===`);
+const num = 10
+const numbers = []
 
-let celcius
-let temp
-
-const fahrenheit = x => {
-	celcius = x
-	temp = celcius * 1.8 + 32;
-	console.log(`${x}°C = ${temp}°F`);
+for (let i=0; i < num; i++) {
+	numbers.push(i);
 }
 
-fahrenheit(20)
+console.log(numbers);
+
+const divide = (x) => {
+	x % 3 === 0 && x !== 0 ? console.log(`Liczba ${x} jest podzielna przez 3`) : console.log(`Liczba ${x} nie jest podzielna przez 3`)
+}
+
+const score = numbers.forEach(divide)
