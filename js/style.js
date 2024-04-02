@@ -1,17 +1,13 @@
-const ulList = document.createElement('ul')
-const liItem = document.createElement('li')
+const div = document.querySelector('div')
+const p = document.createElement('p')
+const headingTwo = document.createElement('h2')
 
+p.textContent = 'Paragraf dodany w JS'
+headingTwo.textContent = 'h2 dodane w JS'
 
-liItem.textContent = 'Cześć' //dodaliśmy do naszego elementu li tekst "Cześć"
+//to jest appenChild - musimy dodawać każdy element osobno, nie jesteśmy w stanie dodać stringu za pomocąa appendChild
+div.appendChild(p)
+div.appendChild(headingTwo)
 
-document.body.appendChild(ulList) //Musimy sprecyzować gdzie w dokumencie chcemy umieścić element w tym przypadku w body
-ulList.appendChild(liItem) // Dodaj dziecko do naszej ulList którym to dzieckiem niech będzie nasza zmienna liItem w której stworzyliśmy nasze li
-
-//Aby dodać coś precyzyjnie w miejscu które chcemy w kodzie musimy mieć jakiś element w html który posłuży nam za kotwicę do elementu
-//To powinno być poukładane ale dla czytelności daję na dole:
-const testDiv = document.querySelector('.test')
-const paragraph = document.createElement('p')
-
-paragraph.textContent = 'To jest dynamicznie stworzony paragraf'
-
-testDiv.appendChild(paragraph)
+//append jest zapisem nowszym możemy dodać kilka elementów na raz
+div.append(p, headingTwo, 'Cześć')
