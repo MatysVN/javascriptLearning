@@ -81,4 +81,11 @@ button:hover {
   width: 100px;
   height: 100px;
   background-color: purple;
+}
+
+.divstyle {
+  font-size: 48px;
+  background-color: red;
+  padding: 20px 40px;
+  border-radius: 20px;
 }/*# sourceMappingURL=style.css.map */
