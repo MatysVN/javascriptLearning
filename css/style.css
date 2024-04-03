@@ -50,4 +50,29 @@ button {
 button:hover {
   background-color: white;
   color: black;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.lime {
+  height: 300px;
+  width: 300px;
+  background-color: lime;
+}
+
+.blue {
+  height: 200px;
+  width: 200px;
+  background-color: royalblue;
+}
+
+.gold {
+  height: 100px;
+  width: 100px;
+  background-color: gold;
 }/*# sourceMappingURL=style.css.map */

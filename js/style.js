@@ -1,26 +1,31 @@
-const btn1 = document.querySelector(".btn-1");
-const btn2 = document.querySelector(".btn-2");
-const btn3 = document.querySelector(".btn-3");
+const lime = document.querySelector('.lime')
+const blue = document.querySelector('.blue')
+const gold = document.querySelector('.gold')
 
-btn1.addEventListener('click', function() {
-    console.log('Kliknięto mnie!');
-})
-
-btn2.addEventListener('mouseover', () => console.log('Najechano na mnie'))
-
-//jednak z funkcji w listenerze raczej nie powinniśmy korzystać dlatego, że tego kodu już nie użyjemy nigdzie indziej, częściej używamy callback
-
-const test = () => {
-    console.log('Kliknięto mnie dwa razy');
+const infoLime = () => {
+    console.log('%clime', 'color:lime; text-transform:uppercase');
+}
+const infoBlue = () => {
+    console.log('%cblue', 'color:royalblue; text-transform:uppercase');
+}
+const infoGold = () => {
+    console.log('%cgold', 'color:gold; text-transform:uppercase');
 }
 
-btn3.addEventListener('dblclick', test)
+//Wykona nam kod Bąbelkowo czyli od dołu do góry (GOLD > BLUE > LIME > DIV > DOCUMENT > WINDOW)
+lime.addEventListener('click', infoLime)
+blue.addEventListener('click', infoBlue)
+gold.addEventListener('click', infoGold)
 
-//Gdybyśmy pobrali wszystkie przyciski na raz, wtedy otrzymujemy obiekt tablicopodobny na którym addEventListener nie zadziała ponieważ musimy sprecyzować który element chcemy nasłuchiwać
-const btns = document.querySelectorAll('button')
+// możemy do addEventListener dodać po przecinku opcje np {once: true} - co spowoduje, że kliknięcie wykona się tylko raz
+// lime.addEventListener('click', infoLime, {once: true})
 
-const smile = () => {
-    console.log('😃');
-}
+//Aby włączyć opcje przechwytywania (capturing), czyli wykonać kod w drugą stronę czyli(Window > Document > DIV > Lime > Blue > Gold)
+lime.addEventListener('click', infoLime, {capture: true})
+blue.addEventListener('click', infoBlue, {capture: true})
+gold.addEventListener('click', infoGold, {capture: true})
 
-btns.forEach(ourElement => ourElement.addEventListener('click', smile)) //używamy tutaj forEach, a nie map ponieważ nie chcemy nic zwracać a jedynie wykonać coś na naszej tablicy
+//Jeżeli kod wykona się najpiew w fazie capture to później w fazie bubbling nie wykona się, chyba że zapiszemy inaczej
+lime.addEventListener('click', infoLime, {capture: true})
+blue.addEventListener('click', infoBlue)
+gold.addEventListener('click', infoGold)
