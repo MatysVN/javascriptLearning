@@ -66,13 +66,19 @@ button:hover {
 }
 
 .blue {
-  height: 200px;
-  width: 200px;
+  height: 230px;
+  width: 230px;
   background-color: royalblue;
 }
 
 .gold {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   background-color: gold;
+}
+
+.purple {
+  width: 100px;
+  height: 100px;
+  background-color: purple;
 }/*# sourceMappingURL=style.css.map */
