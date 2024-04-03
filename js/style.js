@@ -1,10 +1,30 @@
-const div = document.querySelector('div')
+const addBtn = document.querySelector(".add");
+const removeBtn = document.querySelector(".remove");
+const toggleBtn = document.querySelector(".toggle");
+const text = document.querySelector("p");
 
-div.style.fontSize = '48px'
-div.style.backgroundColor = 'red'
-div.style.padding = '20px 40px'
-div.style.borderRadius = '20px'
+// const addClass = () => {
+// 	text.classList.add("test");
+// };
+// const removeClass = () => {
+// 	text.classList.remove("test");
+// };
+const toggleClass = () => {
+	text.classList.toggle("test");
+};
 
-// Jednak nie powinniśmy stylować za pomocą JS ponieważ od tego mamy CSS. Zamiast tego możemy pobrać klasę z naszego pliku css
+const fontIncrease = () => {
+    let currentFontSize = parseInt(window.getComputedStyle(text).fontSize);
+    let newFontSize = currentFontSize + 2
+    text.style.fontSize = newFontSize + "px"
+}
+const fontDecrease = () => {
+    let currentFontSize = parseInt(window.getComputedStyle(text).fontSize);
+    let newFontSize = currentFontSize - 2
+    text.style.fontSize = newFontSize + "px"
+}
 
-div.classList.add('divstyle')
+
+addBtn.addEventListener("click", fontIncrease);
+removeBtn.addEventListener("click", fontDecrease);
+toggleBtn.addEventListener("click", toggleClass);

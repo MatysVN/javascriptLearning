@@ -40,6 +40,7 @@ span {
 }
 
 button {
+  margin: 15px;
   padding: 15px 40px;
   background-color: transparent;
   border: 3px solid white;
@@ -83,9 +84,11 @@ button:hover {
   background-color: purple;
 }
 
-.divstyle {
-  font-size: 48px;
-  background-color: red;
+.test {
+  text-align: center;
+  margin-top: 20px;
   padding: 20px 40px;
-  border-radius: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333;
 }/*# sourceMappingURL=style.css.map */

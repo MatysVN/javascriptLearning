@@ -13,17 +13,17 @@ html {
 }
 
 body {
-    margin: 2em;
+	margin: 2em;
 	font-family: "Roboto", sans-serif;
 	font-size: 1.6rem;
-    color: #fff;
+	color: #fff;
 	background-color: #1d1b21;
 }
 hr {
-    display: block;
-    height: 2px;
-    background-color: rgb(123, 196, 13);
-    width: 10%;
+	display: block;
+	height: 2px;
+	background-color: rgb(123, 196, 13);
+	width: 10%;
 }
 span {
 	color: gold;
@@ -38,6 +38,7 @@ span {
 }
 
 button {
+	margin: 15px;
 	padding: 15px 40px;
 	background-color: transparent;
 	border: 3px solid white;
@@ -76,9 +77,11 @@ button:hover {
 	background-color: purple;
 }
 
-.divstyle {
-	font-size: 48px;
-	background-color: red
-	;padding: 20px 40px;
-	border-radius: 20px;
+.test {
+	text-align: center;
+	margin-top: 20px;
+	padding: 20px 40px;
+	border-radius: 8px;
+	background-color: #fff;
+	color: #333;
 }
