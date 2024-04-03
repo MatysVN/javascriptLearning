@@ -1,30 +1,24 @@
-const addBtn = document.querySelector(".add");
-const removeBtn = document.querySelector(".remove");
-const toggleBtn = document.querySelector(".toggle");
-const text = document.querySelector("p");
+const ulList = document.createElement("ul");
+const number = 10 //stworzone po to aby zmieniac ile razy pętla ma się wykonać
+const allLi = ulList.getElementsByTagName('li') //W zadaniu rozwiązaniem było dać ulList.querySelector('ul:last-child'), ale to nie działa w tym miejscu, trzeba by przesunąć ten kod pod pętlę for gdzie dopiero tam tworzymy wszystkie nasze li
 
-// const addClass = () => {
-// 	text.classList.add("test");
-// };
-// const removeClass = () => {
-// 	text.classList.remove("test");
-// };
-const toggleClass = () => {
-	text.classList.toggle("test");
-};
+document.body.append(ulList);
 
-const fontIncrease = () => {
-    let currentFontSize = parseInt(window.getComputedStyle(text).fontSize);
-    let newFontSize = currentFontSize + 2
-    text.style.fontSize = newFontSize + "px"
-}
-const fontDecrease = () => {
-    let currentFontSize = parseInt(window.getComputedStyle(text).fontSize);
-    let newFontSize = currentFontSize - 2
-    text.style.fontSize = newFontSize + "px"
+for (let i = 1; i <= number; i++) {
+    let liItem = document.createElement('li')
+	liItem.textContent = i;
+	ulList.append(liItem);
 }
 
+allLi[9].textContent = 'Jestem ostatnim elementem.'
+allLi[9].style.backgroundColor = 'royalblue'
+allLi[9].style.padding = '20px 40px'
+allLi[9].style.fontSize = '20px'
 
-addBtn.addEventListener("click", fontIncrease);
-removeBtn.addEventListener("click", fontDecrease);
-toggleBtn.addEventListener("click", toggleClass);
+/* Zadanie
+1. Stwórz w JS ul listę i dodaj ją na stronę.
+2. Lista ma zawieraać w sobie 10 tagów li, w każdym li ma być wypisana cyfra 1,2,3...
+3. Pobierz ostatni element listy, ale nie dodawaj do niego żadnej klasy / ID!
+4. Zmień zawartość ostatniego elementu na tekst "Jestem ostatnim elementem."
+5. Za pomocą JS, ustal style dla ostatniego elementu
+*/
