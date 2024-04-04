@@ -1,6 +1,16 @@
-console.log(Math.random()); //generuje nam losową liczbę 0 - 1
+const link = document.querySelector("a");
+const img = document.querySelector("img");
+const p = document.querySelector("p");
 
-console.log(Math.random() * 10); //generuje nam losową liczbę 0 - 10
+link.setAttribute('href', '#')
+link.setAttribute('target', '_blank')
+//pierwsza wartość to nazwa atrybutu który nas interesuje, druga wartość to ta w środku atrybutu
 
-const number = Math.random() * 10; //generuje nam losową liczbę 0 - 10
-console.log(Math.floor(number)); //zaokrągla tą liczbę do liczby całkowitej
+console.log(img.getAttribute('src'));
+console.log(img.getAttribute('alt'));
+//w naszym img targetujemy atrybut który nas interesuje np src, alt. gatAttribute pobiera wartość, która jest przypisana do danego atrybutu
+
+console.log(p.hasAttribute('style')); // sprawdza czy nasz element posiada jakiś atrybut i zwraca TRUE / FALSE
+
+p.removeAttribute('style');
+//usuwa wskazany atrybut z DOM
