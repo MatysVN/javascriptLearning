@@ -1,16 +1,10 @@
-const link = document.querySelector("a");
-const img = document.querySelector("img");
-const p = document.querySelector("p");
+//aby pobrać nasz atrybut podobnie jak w CSS musimy użyć nawiasów klamrowych
+const divTag = document.querySelector('[data-number="23"]')
+console.log(divTag);
 
-link.setAttribute('href', '#')
-link.setAttribute('target', '_blank')
-//pierwsza wartość to nazwa atrybutu który nas interesuje, druga wartość to ta w środku atrybutu
+console.log('========');
 
-console.log(img.getAttribute('src'));
-console.log(img.getAttribute('alt'));
-//w naszym img targetujemy atrybut który nas interesuje np src, alt. gatAttribute pobiera wartość, która jest przypisana do danego atrybutu
-
-console.log(p.hasAttribute('style')); // sprawdza czy nasz element posiada jakiś atrybut i zwraca TRUE / FALSE
-
-p.removeAttribute('style');
-//usuwa wskazany atrybut z DOM
+console.log(divTag.dataset); // zwraca nam obiekt w którym możemy zobaczyć  wszystkie atrybuty pobranego elementu
+console.log(divTag.dataset.moreInfo); //targetujemy konkretny atrybut pobranego elementu
+divTag.setAttribute('data-test', '123') //dodaliśmy nowy atrybut do pobranego elementu
+divTag.dataset.color='blue' //dodaliśmy atrybut za pomocą dataset
