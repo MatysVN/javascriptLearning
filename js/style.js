@@ -1,9 +1,9 @@
-const test = () => {
-    console.log('🍔');
+'use strict'
+
+const colors = ["red", "green", "blue"];
+
+for(let color of colors) {
+    console.log(color);
 }
 
-test() //funkcja pojawi się od razu
-
-setTimeout(test, 2000) //funkcja pojawi się dopiero po 2 sekundach
-
-setInterval(test, 6000) //funkcja wykonuje się co 6 sekund
+// Jeżeli nie dodalibyśmy "let" albo "const" definiując "color" wtedy kod nie zadziała dzięki 'use strict'
