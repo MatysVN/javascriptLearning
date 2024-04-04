@@ -1,10 +1,25 @@
-//aby pobrać nasz atrybut podobnie jak w CSS musimy użyć nawiasów klamrowych
-const divTag = document.querySelector('[data-number="23"]')
-console.log(divTag);
+//pobierając rodzica mamy dostęp do wszystkich dzieci, wnuków
+const grandpa = document.querySelector('.grandparent')
+console.log(grandpa.querySelector('.parent'));
+console.log(grandpa.querySelectorAll('.child'));
 
-console.log('========');
+console.log('======');
 
-console.log(divTag.dataset); // zwraca nam obiekt w którym możemy zobaczyć  wszystkie atrybuty pobranego elementu
-console.log(divTag.dataset.moreInfo); //targetujemy konkretny atrybut pobranego elementu
-divTag.setAttribute('data-test', '123') //dodaliśmy nowy atrybut do pobranego elementu
-divTag.dataset.color='blue' //dodaliśmy atrybut za pomocą dataset
+const middleChild = document.querySelector('.middle-child')
+console.log(middleChild);
+
+//aby odwołać się do poprzedniego brata naszego elmentu używamy previousElementSibling
+const prevSibling = middleChild.previousElementSibling
+console.log(prevSibling);
+
+//aby odwołać się do następnego brata używamy nextElementSibling
+const nextSibling = middleChild.nextElementSibling
+console.log(nextSibling);
+
+//aby odwołać się do rodzica elementu używamy parentElement
+const parentEl = middleChild.parentElement
+console.log(parentEl);
+
+//aby wyszukać najbliższy element o podanych przez nas paramentrach żeby dostać się do np dziadka elementu używamy closest
+const grandpaEl = middleChild.closest('.grandparent')
+console.log(grandpaEl);
