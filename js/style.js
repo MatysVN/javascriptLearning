@@ -1,25 +1,16 @@
-//pobierając rodzica mamy dostęp do wszystkich dzieci, wnuków
-const grandpa = document.querySelector('.grandparent')
-console.log(grandpa.querySelector('.parent'));
-console.log(grandpa.querySelectorAll('.child'));
+const image = document.querySelector("img");
 
-console.log('======');
+image.setAttribute(
+	"src",
+	"https://cdn.pixabay.com/photo/2024/01/17/12/06/car-8514314_1280.png"
+);
 
-const middleChild = document.querySelector('.middle-child')
-console.log(middleChild);
+image.style.width = "400px";
 
-//aby odwołać się do poprzedniego brata naszego elmentu używamy previousElementSibling
-const prevSibling = middleChild.previousElementSibling
-console.log(prevSibling);
+image.setAttribute("alt", "Samochód jadący pustynią");
 
-//aby odwołać się do następnego brata używamy nextElementSibling
-const nextSibling = middleChild.nextElementSibling
-console.log(nextSibling);
+const name = prompt(`Cześć jak Ci na imię?`, "Tutaj wpisz swoje imię");
 
-//aby odwołać się do rodzica elementu używamy parentElement
-const parentEl = middleChild.parentElement
-console.log(parentEl);
+setTimeout(name, 3000);
 
-//aby wyszukać najbliższy element o podanych przez nas paramentrach żeby dostać się do np dziadka elementu używamy closest
-const grandpaEl = middleChild.closest('.grandparent')
-console.log(grandpaEl);
+console.log(`Cześć ${name}`);
