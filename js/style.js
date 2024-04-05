@@ -1,16 +1,15 @@
-const image = document.querySelector("img");
+const allLi = document.querySelectorAll('li')
+let loopNumber = 1
 
-image.setAttribute(
-	"src",
-	"https://cdn.pixabay.com/photo/2024/01/17/12/06/car-8514314_1280.png"
-);
 
-image.style.width = "400px";
 
-image.setAttribute("alt", "Samochód jadący pustynią");
+for(const liItem of allLi) {
+    liItem.textContent = loopNumber
+    liItem.dataset.id = loopNumber
+    loopNumber++
+}
 
-const name = prompt(`Cześć jak Ci na imię?`, "Tutaj wpisz swoje imię");
+const middleLi = document.querySelector('[data-id="3"]')
+console.log(middleLi);
 
-setTimeout(name, 3000);
-
-console.log(`Cześć ${name}`);
+console.log(middleLi.closest('.wrapper'));
