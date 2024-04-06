@@ -1,31 +1,17 @@
-//każde ID którego użyjemy w HTML automatycznie będzie zmienną w naszym javascript
-console.log(test);
+const image = document.querySelector('.item1')
+const button = document.querySelector('.arrow')
+const arrow = button.querySelector('.fas')
 
-//w konsoli możemy wylogowywać różne rzeczy nie tylko logi
-console.log('Cześć');
-console.log(window.console)
+const showImage = () => {
+    image.classList.toggle('show')
+    arrow.classList.toggle('rotate')
 
-console.warn('To jest ostrzeżenie...')
-console.error('To jest błąd!')
+    //zamiast toggle na arrow można napisać if
+    /* if(image.classList.contains('show)) {
+        arrow.style.transform = 'rotate(180deg)'
+    } else {
+        arrow.style.transform = 'rotate(0)'
+    } */
+}
 
-console.table(['Element 1', 123, 'Element 3'])
-
-const persons = [
-    {
-        name: 'Matylda',
-        age: 0,
-        favFood: 'Mleko'
-    },
-    {
-        name: 'Mateusz',
-        age: 30,
-        favFood: undefined
-    },
-    {
-        name: 'Marlena',
-        age: 31,
-        favFood: 'Płatki owsiane'
-    },
-]
-
-console.table(persons)
+button.addEventListener('click', showImage)
