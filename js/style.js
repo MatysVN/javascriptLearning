@@ -1,17 +1,29 @@
-const image = document.querySelector('.item1')
-const button = document.querySelector('.arrow')
-const arrow = button.querySelector('.fas')
+const sizeUpBtn = document.querySelector(".sizeUp");
+const sizeDownBtn = document.querySelector(".sizeDown");
+const colorBtn = document.querySelector(".color");
+const text = document.querySelector("p");
+let fontSize = 36;
 
-const showImage = () => {
-    image.classList.toggle('show')
-    arrow.classList.toggle('rotate')
+const sizeDown = () => {
+	if (fontSize <= 20) return;
+	 //jeżeli font size dojdzie do 20px to return kończy wykonywanie funkcji
 
-    //zamiast toggle na arrow można napisać if
-    /* if(image.classList.contains('show)) {
-        arrow.style.transform = 'rotate(180deg)'
-    } else {
-        arrow.style.transform = 'rotate(0)'
-    } */
-}
+	fontSize -= 2;
+	text.style.fontSize = fontSize + "px";
+};
+const sizeUp = () => {
+	fontSize += 2;
+	text.style.fontSize = fontSize + "px";
+};
 
-button.addEventListener('click', showImage)
+const changeColor = () => {
+	let r = Math.floor(Math.random() * 255);
+	let g = Math.floor(Math.random() * 255);
+	let b = Math.floor(Math.random() * 255);
+
+	text.style.color = `rgb(${r},${g},${b})`;
+};
+
+sizeDownBtn.addEventListener("click", sizeDown);
+sizeUpBtn.addEventListener("click", sizeUp);
+colorBtn.addEventListener("click", changeColor);
