@@ -18,6 +18,7 @@ body {
   font-size: 1.6rem;
   color: #fff;
   background-color: #1d1b21;
+  overflow: hidden;
 }
 
 hr {
@@ -31,50 +32,52 @@ span {
   color: gold;
 }
 
-.result {
-  margin-bottom: 50px;
+nav ul {
+  position: absolute;
+  top: 0;
+  padding-top: 50px;
+  position: absolute;
+  height: 100vh;
+  width: 350px;
+  right: -350px;
+  list-style: none;
+  background-color: rgb(255, 255, 255);
+  transition: transform 0.3s;
 }
 
-.column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+nav a {
+  display: block;
+  padding: 10px 30px;
+  color: #333;
+  text-decoration: none;
 }
 
-.row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+nav a:hover {
+  font-weight: bold;
 }
 
-label {
+.burger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px 30px;
   font-size: 36px;
-}
-
-input {
-  width: 500px;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  padding: 15px 40px;
-  border-radius: 8px;
-  font-size: 20px;
-}
-
-button {
-  padding: 20px 40px;
-  margin: 20px;
-  cursor: pointer;
   background: none;
+  border: none;
+  cursor: pointer;
   color: #fff;
-  font-size: 18px;
-  border: 3px solid #ddd;
-  border-radius: 8px;
-  transition: 0.3s;
-  text-transform: uppercase;
+  transition: transform 0.3s;
+  z-index: 10;
 }
 
-button:hover {
-  background-color: #ddd;
-  color: #000;
+.fa-times {
+  color: #333;
+}
+
+.active {
+  transform: translateX(-350px);
+}
+
+.hide {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
