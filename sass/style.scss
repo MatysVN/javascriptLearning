@@ -26,55 +26,31 @@ hr {
 	background-color: rgb(123, 196, 13);
 	width: 10%;
 }
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 span {
-	color: gold;
+	color: rgb(255, 0, 149);
 }
-
-nav ul {
-	position: absolute;
-	top: 0;
-	padding-top: 50px;
-	position: absolute;
-	height: 100vh;
-	width: 350px;
-	right: -350px;
-    list-style: none;    
-	background-color: rgb(255, 255, 255);
-	transition: transform .3s;
-}
-
-nav a {
-    display: block;
-    padding: 10px 30px;
-    color: #333;
-    text-decoration: none;    
-}
-
-nav a:hover {
-    font-weight: bold;
-}
-
-.burger {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 20px 30px;
-    font-size: 36px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-	transition: transform .3s;
-	z-index: 10;
-} 
-.fa-times {
+.box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 600px;
+	min-height: 200px;
+	padding: 30px;
+	border-radius: 8px;
+	background-color: #fff;
 	color: #333;
 }
 
-.active {
-    transform: translateX(-350px)
-}
-
-.hide {
-    display: none;
+.fun-fact {
+    margin-top: 20px;
 }

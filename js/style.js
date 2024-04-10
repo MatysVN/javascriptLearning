@@ -1,24 +1,24 @@
-const burger = document.querySelector('.burger')
-const burgerBtn = document.querySelector('.fa-bars')
-const crossBtn = document.querySelector('.fa-times')
-const ulList = document.querySelector('nav ul')
-const allLi = ulList.querySelectorAll('li')
+const currentDay = document.querySelector(".current-day");
+const funFact = document.querySelector(".fun-fact");
 
-const showNav = () => {
-	ulList.classList.toggle('active'); // przesuwa nam element na osi X o 350px
-	burgerBtn.classList.toggle('hide') // nadaje display none na element
-	crossBtn.classList.toggle('hide')
+const facts = [
+	"Krokodyl nie potrafi wystawić języka.",
+	"Każdy człowiek spędził około pół godziny jako pojedyncza komórka.",
+	"Dźwięk przemieszcza się 15 razy szybciej przez stal niż przez powietrze.",
+	"Leniwce potrzebują dwóch tygodni na strawienie jedzenia.",
+	"Goryle śpią nawet czternaście godzin dziennie.",
+	"Język kameleona jest dwukrotnie dłuższy od jego ciała.",
+	"Chińczycy w ciągu roku zużywają około 80 miliardów pałeczek.",
+	"Żeby wejść na Wieżę Eiffla trzeba pokonać aż 1710 stopni.",
+];
+
+const day = new Date();
+currentDay.textContent = day.toLocaleString('pl', {weekday: "long"}) // dzisiejsza data
+
+const showRandomFacts = () => {
+	const number = Math.floor(Math.random() * (facts.length - 1)) // wywołuje losowy numer z tablicy facts 0-7
+
+	funFact.textContent = facts[number]
+	console.log(number);
 }
-const closeNav = () => {
-	ulList.classList.remove('active')
-}
-
-//trzeba nadać forEach na allLi tak żeby funkcja była aktywna na każdym elemencie li. Zamiast nazwy "li" możemy użyć dowolnej
-allLi.forEach(li => li.addEventListener('click', closeNav))
-
-burger.addEventListener('click', showNav);
-console.log(allLi);
-
-/* 1.Po kliknięciu przycisku burgerBtn dodaje klase .active do ulList oraz nadaje na burgerBtn klasę .hide, a z crossBtn ją usuwa
-2.Po kliknięciu w crossBtn usuwa klase .actie z ulList oraz nadaje na crossBtn klasę .hide, a na burgerBtn usuwa tą klase
-3.Po kliknięciu w liItem zamyka nawigacje */
+showRandomFacts()
