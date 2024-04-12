@@ -49,5 +49,13 @@ const addNewTodo = () => {
     } else
     errorInfo.textContent = "Musisz wpisać jakąś treść..."
 }
+/*
+Funkcja tworząca narzędzia:
+1. Musi stworzyć div z klasą tools, następnie dodać mu klasę tools
+2. stworzyć 3 przyciski, umieścić w nich odpowiednią treść i klasy */
+
+const createToolsArea = () => {
+    
+}
 
 document.addEventListener('DOMContentLoaded', main)
