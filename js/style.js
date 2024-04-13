@@ -2,7 +2,7 @@ let todoInput // miejsce, gdzie użytkownik wpisuje treść zadania
 let errorInfo // info o braku zadań / konieczności wpisania tekstu
 let addBtn // przycisk ADD - dodaje nowy element do listy
 let ulList // lista zadań, tagi UL
-let newTodo // tworzy nowe LI, nowe zadanie
+// let newTodo // tworzy nowe LI, nowe zadanie //usunąłem z tąd newTodo żeby nie było funkcją globalną i tworzę niżej w funkcji jako lokalna
 
 
 const main = () => {
@@ -37,17 +37,15 @@ Funkcja dodająca element do listy:
 const addNewTodo = () => {
     if (todoInput.value !== '') {
 
-       newTodo = document.createElement('li');
+       const newTodo = document.createElement('li');
      newTodo.textContent = todoInput.value;
+     createToolsArea(newTodo) //newTodo przekazujemy jako argument w funkcji createToolsArea
 
         ulList.append(newTodo)
 
         todoInput.value = ''
+         errorInfo.textContent = ''
     
-        errorInfo.textContent = ''
-    
-        createToolsArea()
-
     } else
     errorInfo.textContent = "Musisz wpisać jakąś treść..."
 }
@@ -56,11 +54,11 @@ Funkcja tworząca narzędzia:
 1. Musi stworzyć div z klasą tools, następnie dodać mu klasę tools
 2. stworzyć 3 przyciski, umieścić w nich odpowiednią treść i klasy */
 
-const createToolsArea = () => {
+const createToolsArea = (test) => {
 
 const toolPanel = document.createElement('div')
 toolPanel.classList.add('tools')
-newTodo.append(toolPanel)
+test.append(toolPanel)
 
 const completeBtn = document.createElement('button')
 completeBtn.classList.add('complete')
