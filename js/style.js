@@ -22,6 +22,7 @@ ulList = document.querySelector('.todolist ul')
 const prepareDOMEvents = () => {
     //nadajemy nasłuchiwanie
     addBtn.addEventListener('click', addNewTodo)
+    ulList.addEventListener('click', clickCheck)
 }
 
 //DOMContentLoaded - strona internetowa została wczytana (DOM, CSS, grafiki itd.)
@@ -45,7 +46,6 @@ const addNewTodo = () => {
 
         todoInput.value = ''
          errorInfo.textContent = ''
-    
     } else
     errorInfo.textContent = "Musisz wpisać jakąś treść..."
 }
@@ -73,7 +73,24 @@ deleteBtn.classList.add('delete')
 deleteBtn.innerHTML = '<i class="fas fa-times"></i>'
 
 toolPanel.append(completeBtn, editBtn, deleteBtn)
-}
-console.log(createToolsArea);
 
-document.addEventListener('DOMContentLoaded', main)
+}
+
+document.addEventListener('DOMContentLoaded', main) // włącza nasze funkcje dopiero po caładowaniu całej strony
+
+//Tworzymy funkcję która sprawdza jaki przycisk zostakl kliknięty
+
+const clickCheck = (e) => {
+    // jeżeli nasz kliknięty element ma klasę .complete pokaże TRUE w każdym innym przypadku false
+    if(e.target.matches('.complete')) {
+        e.target.closest('li').classList.toggle('completed') //closest targetuje najbliżej położone li czyli dziadka elementu
+        e.target.classList.toggle('completed')
+
+    } else if (e.target.matches('.edit')) {
+        console.log(`Edit`);
+
+    } else if (e.target.matches('.delete')) 
+        console.log(`Delete`);
+    
+}
+
