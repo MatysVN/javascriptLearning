@@ -4,6 +4,7 @@ let addBtn // przycisk ADD - dodaje nowy element do listy
 let ulList // lista zadań, tagi UL
 let newTodo // tworzy nowe LI, nowe zadanie
 
+
 const main = () => {
 //uruchamiamy nasze funkcje
 prepareDOMElements()
@@ -37,8 +38,7 @@ const addNewTodo = () => {
     if (todoInput.value !== '') {
 
        newTodo = document.createElement('li');
-
-       newTodo.textContent = todoInput.value;
+     newTodo.textContent = todoInput.value;
 
         ulList.append(newTodo)
 
@@ -46,6 +46,8 @@ const addNewTodo = () => {
     
         errorInfo.textContent = ''
     
+        createToolsArea()
+
     } else
     errorInfo.textContent = "Musisz wpisać jakąś treść..."
 }
@@ -55,7 +57,25 @@ Funkcja tworząca narzędzia:
 2. stworzyć 3 przyciski, umieścić w nich odpowiednią treść i klasy */
 
 const createToolsArea = () => {
-    
+
+const toolPanel = document.createElement('div')
+toolPanel.classList.add('tools')
+newTodo.append(toolPanel)
+
+const completeBtn = document.createElement('button')
+completeBtn.classList.add('complete')
+completeBtn.innerHTML = '<i class="fas fa-check"></i>'
+
+const editBtn = document.createElement('button')
+editBtn.classList.add('edit')
+editBtn.textContent = 'EDIT'
+
+const deleteBtn = document.createElement('button')
+deleteBtn.classList.add('delete')
+deleteBtn.innerHTML = '<i class="fas fa-times"></i>'
+
+toolPanel.append(completeBtn, editBtn, deleteBtn)
 }
+console.log(createToolsArea);
 
 document.addEventListener('DOMContentLoaded', main)
