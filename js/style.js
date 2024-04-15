@@ -12,6 +12,7 @@ let popupInput; // input w popupie
 let popupAddBtn; // przycisk "zatwierdź" w popupie
 let popupCloseBtn; // przycisk "anuluj" w popupie
 
+
 const main = () => {
 	//uruchamiamy nasze funkcje
 	prepareDOMElements();
@@ -98,7 +99,9 @@ const clickCheck = (e) => {
 		e.target.classList.toggle("completed");
 	} else if (e.target.matches(".edit")) {
 		editTodo(e);
-	} else if (e.target.matches(".delete")) console.log(`Delete`);
+	} else if (e.target.matches(".delete")) {
+		deleteTodo(e)
+	}
 };
 
 const editTodo = (e) => {
@@ -121,3 +124,15 @@ const changeTodoText = () => {
 		popupInfo.textContent = "Musisz podać jakąś treść!";
 	}
 };
+
+const deleteTodo = (e) => {
+	// ulList.removeChild(e.target.closest("li")) // ja zrobiłem tak a  w kursie jest
+	e.target.closest('li').remove(e)
+
+	//sprawdza czy ul ma w sobie jakieś Li, jeżeli nie ma to wyświetla komunikat
+	const allTodos = ulList.querySelectorAll('li')
+	if(allTodos.length === 0) {
+		errorInfo.textContent = "Brak zadań na liście."
+	}
+}
+
