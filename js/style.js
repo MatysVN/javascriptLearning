@@ -31,6 +31,7 @@ const prepareDOMElements = () => {
 	popupInput = document.querySelector(".popup-input");
 	popupAddBtn = document.querySelector(".accept");
 	popupCloseBtn = document.querySelector(".cancel");
+
 };
 
 const prepareDOMEvents = () => {
@@ -39,6 +40,9 @@ const prepareDOMEvents = () => {
 	ulList.addEventListener("click", clickCheck);
 	popupCloseBtn.addEventListener("click", closePopup);
 	popupAddBtn.addEventListener("click", changeTodoText);
+	todoInput.addEventListener('keyup', enterKeyCheck)
+	popupInput.addEventListener('keyup', enterKeyCheck)
+	window.addEventListener('keydown', escapeKeyCheck)
 };
 
 //DOMContentLoaded - strona internetowa została wczytana (DOM, CSS, grafiki itd.)
@@ -136,3 +140,18 @@ const deleteTodo = (e) => {
 	}
 }
 
+const enterKeyCheck = (e) => {
+	if(e.key === 'Enter') {
+		if (e.target === popupInput) {
+			changeTodoText()
+		} else {
+			addNewTodo()
+		}
+	}
+}
+
+const escapeKeyCheck = (e) => {
+if (e.code === 'Escape') {
+	closePopup()
+}
+}
