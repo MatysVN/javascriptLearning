@@ -12,7 +12,6 @@ let popupInput; // input w popupie
 let popupAddBtn; // przycisk "zatwierdź" w popupie
 let popupCloseBtn; // przycisk "anuluj" w popupie
 
-
 const main = () => {
 	//uruchamiamy nasze funkcje
 	prepareDOMElements();
@@ -31,7 +30,6 @@ const prepareDOMElements = () => {
 	popupInput = document.querySelector(".popup-input");
 	popupAddBtn = document.querySelector(".accept");
 	popupCloseBtn = document.querySelector(".cancel");
-
 };
 
 const prepareDOMEvents = () => {
@@ -40,9 +38,9 @@ const prepareDOMEvents = () => {
 	ulList.addEventListener("click", clickCheck);
 	popupCloseBtn.addEventListener("click", closePopup);
 	popupAddBtn.addEventListener("click", changeTodoText);
-	todoInput.addEventListener('keyup', enterKeyCheck)
-	popupInput.addEventListener('keyup', enterKeyCheck)
-	window.addEventListener('keydown', escapeKeyCheck)
+	todoInput.addEventListener("keyup", enterKeyCheck);
+	popupInput.addEventListener("keyup", enterKeyCheck);
+	window.addEventListener("keydown", escapeKeyCheck);
 };
 
 //DOMContentLoaded - strona internetowa została wczytana (DOM, CSS, grafiki itd.)
@@ -104,7 +102,7 @@ const clickCheck = (e) => {
 	} else if (e.target.matches(".edit")) {
 		editTodo(e);
 	} else if (e.target.matches(".delete")) {
-		deleteTodo(e)
+		deleteTodo(e);
 	}
 };
 
@@ -116,14 +114,14 @@ const editTodo = (e) => {
 
 const closePopup = () => {
 	popup.style.display = "none";
-	popupInfo.textContent = ""
+	popupInfo.textContent = "";
 };
 
 const changeTodoText = () => {
 	if (popupInput.value !== "") {
 		todoToEdit.firstChild.textContent = popupInput.value;
-		closePopup()
-		popupInfo.textContent = ""
+		closePopup();
+		popupInfo.textContent = "";
 	} else {
 		popupInfo.textContent = "Musisz podać jakąś treść!";
 	}
@@ -131,27 +129,27 @@ const changeTodoText = () => {
 
 const deleteTodo = (e) => {
 	// ulList.removeChild(e.target.closest("li")) // ja zrobiłem tak a  w kursie jest
-	e.target.closest('li').remove(e)
+	e.target.closest("li").remove(e);
 
 	//sprawdza czy ul ma w sobie jakieś Li, jeżeli nie ma to wyświetla komunikat
-	const allTodos = ulList.querySelectorAll('li')
-	if(allTodos.length === 0) {
-		errorInfo.textContent = "Brak zadań na liście."
+	const allTodos = ulList.querySelectorAll("li");
+	if (allTodos.length === 0) {
+		errorInfo.textContent = "Brak zadań na liście.";
 	}
-}
+};
 
 const enterKeyCheck = (e) => {
-	if(e.key === 'Enter') {
+	if (e.key === "Enter") {
 		if (e.target === popupInput) {
-			changeTodoText()
+			changeTodoText();
 		} else {
-			addNewTodo()
+			addNewTodo();
 		}
 	}
-}
+};
 
 const escapeKeyCheck = (e) => {
-if (e.code === 'Escape') {
-	closePopup()
-}
-}
+	if (e.code === "Escape") {
+		closePopup();
+	}
+};
